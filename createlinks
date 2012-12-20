@@ -21,13 +21,12 @@
 
 use esmith::Build::CreateLinks  qw(:all);
 use File::Path;
-use strict;
 
 #--------------------------------------------------
 # actions for nethserver-avahi-update event
 #--------------------------------------------------
 
-$event = "nethserver-avahi-update";
+my $event = "nethserver-avahi-update";
 
 event_services($event, 'avahi-daemon' => 'restart');
 event_actions($event,
