@@ -19,6 +19,14 @@ Avahi daemon configuration
 %build
 perl createlinks
 
+%post
+source /etc/nethserver/rpm_hook_functions
+event_queue add %{name}-update
+
+%preun
+source /etc/nethserver/rpm_hook_functions
+signal-event  %{name}-uninstall $1
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
