@@ -25,7 +25,7 @@ event_queue add %{name}-update
 
 %preun
 source /etc/nethserver/rpm_hook_functions
-signal-event  %{name}-uninstall $1
+signal_event  %{name}-uninstall $1
 
 
 %install
