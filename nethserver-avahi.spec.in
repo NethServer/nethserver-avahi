@@ -1,0 +1,33 @@
+Summary: Avahi daemon configuration
+Name: nethserver-avahi
+Version: @@VERSION@@
+Release: @@RELEASE@@%{?dist}
+License: GPL
+BuildArch: noarch
+Source: %{name}-%{version}.tar.gz
+
+Requires: avahi
+
+BuildRequires: perl, nethserver-devtools
+
+%description
+Updates /etc/issue and /etc/redhat-release contents
+
+%prep
+%setup
+
+%build
+perl createlinks
+
+
+%install
+rm -rf $RPM_BUILD_ROOT
+(cd root   ; find . -depth -not -name '*.orig' -print  | cpio -dump $RPM_BUILD_ROOT)
+%{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
+echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
+
+%files -f %{name}-%{version}-%{release}-filelist
+%defattr(-,root,root)
+
+%changelog
+~               
