@@ -11,7 +11,7 @@ Requires: avahi
 BuildRequires: perl, nethserver-devtools
 
 %description
-Updates /etc/issue and /etc/redhat-release contents
+Avahi daemon configuration
 
 %prep
 %setup
@@ -30,4 +30,6 @@ echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
 
 %changelog
+* Thu Dec 20 2012 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
+- First release
 ~               
