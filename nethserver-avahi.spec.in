@@ -1,7 +1,7 @@
 Summary: Avahi daemon configuration
 Name: nethserver-avahi
 Version: @@VERSION@@
-Release: @@RELEASE@@%{?dist}
+Release: @@RELEASE@@
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -38,6 +38,6 @@ echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
 
 %changelog
-* Thu Dec 20 2012 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
+* Wed Jan 16 2012 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
 - First release
 ~               
