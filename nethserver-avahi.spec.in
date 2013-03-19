@@ -38,6 +38,9 @@ echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
 
 %changelog
+* Tue Mar 19 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-2
+- Fix changelog
+
 * Wed Jan 16 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
 - First release
 ~               
