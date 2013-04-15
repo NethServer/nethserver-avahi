@@ -29,11 +29,6 @@ use File::Path;
 my $event = "nethserver-avahi-update";
 
 event_services($event, 'avahi-daemon' => 'restart');
-event_actions($event,
-              'initialize-default-databases' => '00',
-              'nethserver-avahi-conf' => '02',
-              'firewall-adjust' => '30',
-              'runlevel-adjust' => '40');
 
 #--------------------------------------------------
 # actions for nethserver-avahi-save event
@@ -42,18 +37,4 @@ event_actions($event,
 $event = "nethserver-avahi-save";
 
 event_services($event, 'avahi-daemon' => 'restart');
-
-
-#--------------------------------------------------
-# actions for nethserver-avahi-uninstall event
-#--------------------------------------------------
-
-$event = "nethserver-avahi-uninstall";
-
-event_actions($event,
-              'nethserver-avahi-uninstall' => '02',
-              'firewall-adjust' => '40',
-              'runlevel-adjust' => '50');
-
-
 
