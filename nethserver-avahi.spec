@@ -1,7 +1,7 @@
 Summary: Avahi daemon configuration
 Name: nethserver-avahi
-Version: @@VERSION@@
-Release: @@RELEASE@@
+Version: 1.0.2
+Release: 1
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
