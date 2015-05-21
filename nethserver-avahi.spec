@@ -8,7 +8,7 @@ Source: %{name}-%{version}.tar.gz
 
 Requires: avahi
 
-BuildRequires: perl, nethserver-devtools
+BuildRequires: nethserver-devtools
 
 %description
 Avahi daemon configuration
@@ -19,19 +19,15 @@ Avahi daemon configuration
 %build
 perl createlinks
 
-%post
-
-%preun
-
-
 %install
-rm -rf $RPM_BUILD_ROOT
-(cd root   ; find . -depth -not -name '*.orig' -print  | cpio -dump $RPM_BUILD_ROOT)
-%{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
-echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
+rm -rf %{buildroot}
+(cd root   ; find . -depth -not -name '*.orig' -print  | cpio -dump %{buildroot})
+%{genfilelist} %{buildroot} > %{name}-%{version}-%{release}-filelist
+
 
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
+%doc COPYING
 
 %changelog
 * Wed Feb 05 2014 Davide Principi <davide.principi@nethesis.it> - 1.0.2-1.ns6
@@ -45,4 +41,3 @@ echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
 
 * Wed Jan 16 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
 - First release
-~               
