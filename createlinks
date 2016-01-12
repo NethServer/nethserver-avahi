@@ -28,6 +28,9 @@ use File::Path;
 
 my $event = "nethserver-avahi-update";
 
+event_actions($event, qw(
+    initialize-default-databases 00
+));
 event_services($event, 'avahi-daemon' => 'restart');
 
 #--------------------------------------------------
